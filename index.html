@@ -93,14 +93,11 @@ h1,h2,h3,h4,h5,h6 {
 
   <div class="w3-row w3-padding-64" id="newuser">
   <h3 class="margin">New User</h3>
-  <p>If you are a new user, please add your name and e-mail here!</p>
+  <p>If you are a new user, please add your name here!</p>
   <div>
     <form class="form-group">
       Customer Name:<br>
-      <input type="text" class="form-control" ng-model="idCustomer" required><br>
-      E-mail:<br>
-      <input type="text" class="form-control" ng-model="e-mail" required>
-      <br><br>
+      <input type="text" class="form-control" ng-model="idCustomer" required><br><br>
       <button type="submit" class="btn btn-default" ng-click="save()">Add</button>
     </form>
   </div>  
@@ -146,10 +143,10 @@ h1,h2,h3,h4,h5,h6 {
 var app = angular.module('myApp', []);
 
 $scope.save = function () {
-    $http.post("mysql/customer", {"idCustomer": $scope.idCustomer, "e-mail": $scope.e-mail})
+    $http.post("mysql/customer", {"idCustomer": $scope.idCustomer})
     .then(function (response) {
         // add locally!
-        $scope.names.push({"idCustomer": $scope.idCustomer, "e-mail": $scope.e-mail});
+        $scope.names.push({"idCustomer": $scope.idCustomer});
         
         $scope.idCustomer = '';
         $scope.e-mail = '';        

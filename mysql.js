@@ -108,6 +108,25 @@ router.post('/review', function(req, res, next) {
 });
 
 
+router.post('/customer', function(req, res, next) {
+
+  var sql = con.query("INSERT INTO geast.customer set ? ", req.body, function (err, result, fields) {
+
+    if (err) throw err;
+
+    
+
+    console.log(sql);
+
+    // res.send(result);
+
+    res.json({"status": "OK"}); // your own
+
+  });
+
+});
+
+
 
 
 module.exports = router;
