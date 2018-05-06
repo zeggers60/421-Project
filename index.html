@@ -108,19 +108,20 @@ h1,h2,h3,h4,h5,h6 {
     </form>
   </div>  
 </div>
+</div>
 
   <h3 class="margin">About Our Team</h3><br>
     <div class="col-sm-4">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="images/birds1.jpg" class="img-responsive margin" style="width:15%" alt="Image">
+      <p>Joseph Begley - CEO.</p>
+      <img src="mugshot1-Palmer.jpg" class="img-responsive margin" style="width:15%" alt="Image">
     </div>
     <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="images/birds2.jpg" class="img-responsive margin" style="width:15%" alt="Image">
+      <p>Skylar East - COO.</p>
+      <img src="mugshot-Skylar.jpg" class="img-responsive margin" style="width:15%" alt="Image">
     </div>
     <div class="col-sm-4"> 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-      <img src="images/birds3.jpg" class="img-responsive margin" style="width:15%" alt="Image">
+      <p>Zebulun Eggers - CFO.</p>
+      <img src="Zeggers.jpg" class="img-responsive margin" style="width:15%" alt="Image">
     </div>
   </div>
 </div>
@@ -129,10 +130,10 @@ h1,h2,h3,h4,h5,h6 {
 var app = angular.module('myApp', []);
 
 $scope.save = function () {
-    $http.post("mysql/student", {"utid": $scope.utid, "student_name": $scope.student_name})
+    $http.post("mysql/student", {"id_review": $scope.id_review, "comment": $scope.comment})
     .then(function (response) {
         // add locally!
-        $scope.names.push({"utid": $scope.utid, "student_name": $scope.student_name});
+        $scope.names.push({"id_review": $scope.id_review, "comment": $scope.comment});
         
         $scope.utid = '';
         $scope.student_name = '';        
